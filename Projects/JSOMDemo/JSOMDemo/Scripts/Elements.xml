@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Scripts">
+    <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\_references.js" Url="Scripts/_references.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\JSOMScript.js" Url="Scripts/JSOMScript.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\JSONExceptionHandling.js" Url="Scripts/JSONExceptionHandling.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\GlobalFunctions.js" Url="Scripts/GlobalFunctions.js" ReplaceContent="TRUE" />
+  </Module>
+</Elements>

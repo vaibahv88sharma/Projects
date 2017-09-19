@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x010037C8EFA1B8C949D7921D4940E93EFFB6" Name="LookUpContentType1" Group="Custom Content Types" Description="My Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{5b12202d-98f6-4839-8ee4-dca93907136a}" DisplayName="Look Up Site Column 1" Required="FALSE" Name="LookUpSiteColumn1" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

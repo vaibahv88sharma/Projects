@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Page (0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF39) -->
+  <ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF39004A3E4013B6A6400288081E19133C93C0" Name="SathishArticle" Group="PageLayoutDemo" Description="My Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{295941ef-fe3a-4c41-9320-781c361a7f20}" DisplayName="Article Author" Required="TRUE" Name="ArticleAuthor" />
+      <FieldRef ID="{bb7209d7-0a01-4973-bc12-b20cedbcdb10}" DisplayName="Body" Required="FALSE" Name="Body" />
+      <FieldRef ID="{b27182fb-e2fe-4ab5-af84-c6ccbaec8920}" DisplayName="Tags" Required="FALSE" Name="Tags" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

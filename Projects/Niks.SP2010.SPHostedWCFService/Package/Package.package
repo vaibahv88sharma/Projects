@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="006e4251-9065-44cd-ab1c-6bf3c0c1d6ec" solutionId="006e4251-9065-44cd-ab1c-6bf3c0c1d6ec" resetWebServer="false" sharePointProductVersion="15.0" name="Niks.SP2010.SPHostedWCFService" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <projectItems>
+    <projectItemReference itemId="b1681839-56b4-4e49-bc8f-9e7c2af7147f" />
+  </projectItems>
+</package>

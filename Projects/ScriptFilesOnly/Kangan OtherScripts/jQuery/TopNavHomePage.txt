@@ -1,0 +1,238 @@
+		<!--<link rel="stylesheet" type="text/css" href="/sites/portal/Style%20Library/StaffPortal/IconsHover/default.css" />
+		<link rel="stylesheet" type="text/css" href="/sites/portal/Style%20Library/StaffPortal/IconsHover/component.css" />
+		<script src="/sites/portal/Style%20Library/StaffPortal/IconsHover/modernizr.custom.js"></script>-->
+		
+		<link rel="stylesheet" type="text/css" href="/sites/portal/Style%20Library/StaffPortal/ImageHover/default.css" />
+		<link rel="stylesheet" type="text/css" href="/sites/portal/Style%20Library/StaffPortal/ImageHover/component.css" />
+		<script src="/sites/portal/Style%20Library/StaffPortal/ImageHover/modernizr.custom.js"></script>
+		<script src="/sites/portal/Style%20Library/StaffPortal/ImageHover/toucheffects.js"></script>
+
+
+		
+<style>
+
+a {
+    color: #888;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #888;
+    text-decoration: none;
+}
+
+/* Icons Hover -- Begin */
+.gridIcon figure img {
+    height: 8em;
+}
+.gridIcon ul {
+    padding: 20px 20px 20px 20px;
+}
+.gridIcon ul li {
+    width: 220px;
+	padding: 20px 0px;
+}
+/* Icons Hover -- End */
+
+.width_height img {
+	width: 100%;
+    height: 35em !important;
+}
+
+#myCarousel .nav a small
+{
+    display: block;
+}
+#myCarousel .nav
+{
+
+    background: rgb(0,0,0);
+    background: rgba(0,0,0, 0.7);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+#myCarousel .nav :hover
+{
+
+    background: rgb(0,0,0);
+    background: rgba(0,0,0, 0.7);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.nav-justified > li > a
+{
+    border-radius: 0px;
+}
+.nav-pills>li[data-slide-to="0"].active a { background-color:  rgba(76,76,76, 0.7); color:#fff;}
+.nav-pills>li[data-slide-to="1"].active a { background-color:  rgba(76,76,76, 0.7); color:#fff;}
+.nav-pills>li[data-slide-to="2"].active a { background-color:  rgba(76,76,76, 0.7); color:#fff;}
+.nav-pills>li[data-slide-to="3"].active a { background-color:  rgba(76,76,76, 0.7); color:#fff;}
+
+#carousel1 .nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+}
+</style>
+<div class="container-fluid">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1250">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+         <div class="item active width_height">
+                <img src="/sites/portal/PublishingImages/5.jpg">
+             
+            </div>
+            <!-- End Item -->
+            <div class="item width_height">
+                <img src="/sites/portal/PublishingImages/2.jpg">
+           
+            </div>
+            <!-- End Item -->
+            <div class="item width_height">
+                <img src="/sites/portal/PublishingImages/3.jpg">
+        
+            </div>
+            <!-- End Item -->
+            <div class="item width_height">
+                <img src="/sites/portal/PublishingImages/8.png">
+            </div>
+            <!-- End Item -->
+        </div>
+        <!-- End Carousel Inner -->
+        <ul id="carousel1" class="nav nav-pills nav-justified">
+            <li data-target="#myCarousel" data-slide-to="0" class="active">
+				<a href="#">
+					<b>Kangan</b>
+					<small>Real Education. Real Skills. Real Jobs.</small>
+				</a>
+			</li>
+            <li data-target="#myCarousel" data-slide-to="1">
+				<a href="#">
+					<b>Bendigo</b>
+					<small>Vocational Education</small>
+				</a>
+			</li>
+            <li data-target="#myCarousel" data-slide-to="2">
+				<a href="#">
+					<b>BRIT</b>
+					<small>Bendigo Regional Institute of TAFE</small>
+				</a>
+			</li>
+            <li data-target="#myCarousel" data-slide-to="3">
+				<a href="#">
+					<b>BKI 2020</b>
+					<small>Values and Behaviours</small>
+				</a>
+			</li>
+        </ul>
+    </div>
+    <!-- End Carousel -->
+</div>
+<!--<div class="container-fluid">
+	<div class="jumbotron">
+				<div class="hi-icon-wrap hi-icon-effect-2 hi-icon-effect-2a">
+					<a href="#set-2" class="hi-icon hi-icon-cog">Settings</a>
+					<a href="#set-2" class="hi-icon hi-icon-clock">Time</a>
+					<a href="#set-2" class="hi-icon hi-icon-videos">Videos</a>
+					<a href="#set-2" class="hi-icon hi-icon-list">List</a>
+					<a href="#set-2" class="hi-icon hi-icon-refresh">Refresh</a>
+				</div>
+				</div>
+</div>-->
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 gridIcon">
+			<ul class="grid" >
+				<li class="cs-style-1">
+					<figure>
+						<img src="/sites/portal/Style%20Library/StaffPortal/ImageHover/images/IT.jpg" alt="img01" >
+						<h4 style="position: absolute; top: 20px; left: 100px; background-color: black; margin-top: -10px; color: white; border-color: red; border-width: 2px; border-style: solid;">  IS&S  </h4>
+						<figcaption style="height: 8em; width: 11em;">
+						<!--<figcaption style="height: 5em; width: 7em;">-->
+							<!--<h3>Camera</h3>  --> 
+							<h5 style="color: white;">IS & S</h5>
+							<!--<h5 style="color: white; margin-top: -5px;">IS & S</h5>-->
+							<!--<span>IT Support</span>  -->
+							<a href="http://heat01p-bro/HEAT/Default.aspx?ProviderName=WIS&Scope=SelfService&Role=SelfService" target="_blank" style="margin-top: -30px;">Open</a>
+						</figcaption>
+					</figure>
+				</li>			
+			</ul>	
+		</div>
+		<!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 gridIcon">
+			<ul class="grid" >
+				<li class="cs-style-2">
+					<figure>
+						<img src="/sites/portal/Style%20Library/StaffPortal/ImageHover/images/4.png" alt="img01" >
+						<figcaption style="height: 5em; width: 7em;">
+							<h5 style="color: white; margin-top: -5px;">News</h5>
+							<a href="http://dribbble.com/shots/1115632-Camera" target="_blank" style="margin-top: -30px;">Open</a>
+						</figcaption>
+					</figure>
+				</li>			
+			</ul>	
+		</div>-->
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 gridIcon">
+			<ul class="grid" >
+				<li class="cs-style-5">
+					<figure>
+						<img src="/sites/portal/Style%20Library/StaffPortal/ImageHover/images/Kangan2.png" alt="img01" >
+						<figcaption style="height: 8em; width: 11em;">
+							<!--<h3>Camera</h3>  --> 
+							<h5 style="color: white; margin-top: -13px;">Kangan</h5>
+							<!--<span>IT Support</span>  -->
+							<a href="https://www.kangan.edu.au/" target="_blank" style="margin-top: -30px; bottom: 5px; right: 5px;">Open</a>
+						</figcaption>
+					</figure>
+				</li>			
+			</ul>	
+		</div>			
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 gridIcon">
+			<ul class="grid" >
+				<li class="cs-style-7">
+					<figure>
+						<img src="/sites/portal/Style%20Library/StaffPortal/ImageHover/images/Bendigo2.png" alt="img01" >
+						<figcaption style="height: 10em; width: 11em;">
+							<!--<h3>Camera</h3>  --> 
+							<h5 style="color: white; margin-top: 115px;">Bendigo</h5>
+							<!--<span>IT Support</span>  -->
+							<!--<a href="http://dribbble.com/shots/1115632-Camera" style="margin-top: -30px; bottom: 5px; right: 5px;">Open</a> -->
+							<a href="http://www.bendigotafe.edu.au" target="_blank" style="bottom: -5px; right: 5px;">Open</a>
+						</figcaption>
+					</figure>
+				</li>			
+			</ul>	
+		</div>			
+		<!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 gridIcon">
+			<ul class="grid" >
+				<li class="cs-style-6">
+					<figure>
+						<img src="/sites/portal/Style%20Library/StaffPortal/ImageHover/images/4.png" alt="img01" >
+						<figcaption style="height: 5em; width: 7em;">
+							<h5 style="color: white; margin-top: -5px;">Leaves</h5>
+							<a href="http://dribbble.com/shots/1115632-Camera" target="_blank" style="margin-top: -30px;">Open</a>
+						</figcaption>
+					</figure>
+				</li>			
+			</ul>	
+		</div>	-->
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 gridIcon">
+			<ul class="grid" >
+				<li class="cs-style-4">
+					<figure>
+						<img src="/sites/portal/Style%20Library/StaffPortal/ImageHover/images/News.png" alt="img01" >
+						<figcaption style="height: 8em; width: 11em;">
+							<h5 style="color: white; margin-top: -11px;">News</h5>
+							<a href="https://staffportal.kangan.edu.au/sites/bkinews/Pages/default.aspx" target="_blank" style="margin-top: -30px;">Open</a>
+						</figcaption>
+					</figure>
+				</li>			
+			</ul>	
+		</div>		
+	</div>	
+</div>

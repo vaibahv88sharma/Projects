@@ -1,0 +1,47 @@
+Configuration for Workflow Manager
+Management Database SQL Instance	SPAPP03P-BRO
+Enable SSL connection with SQL Server instance	False
+Authentication	Windows Authentication
+Management Database Name	WFManagementDB
+Instance Management Database SQL Instance	SPAPP03P-BRO
+Enable SSL connection with SQL Server instance	False
+Authentication	Windows Authentication
+Instance Management Database Name	WFInstanceManagementDB
+Resource Management Database SQL Instance	SPAPP03P-BRO
+Enable SSL connection with SQL Server instance	False
+Authentication	Windows Authentication
+Resource Management Database Name	WFResourceManagementDB
+RunAs Account	kbtm\svc_sp2016DB-prod
+RunAs Password	***********
+Certificate Generation Key	***********
+Workflow Manager Outbound Signing Certificate	Auto-generated
+Service SSL Certificate	Auto-generated
+Encryption Certificate	Auto-generated
+Workflow Manager Management Port	12290
+HTTP Port	12291
+Enable firewall rules on this computer	True
+Administrators Group	BUILTIN\Administrators
+Configuration for Service Bus
+Management Database SQL Instance	SPAPP03P-BRO
+Enable SSL connection with SQL Server instance	False
+Authentication	Windows Authentication
+Management Database Name	SbManagementDB
+Gateway Database SQL Instance	SPAPP03P-BRO
+Enable SSL connection with SQL Server instance	False
+Authentication	Windows Authentication
+Gateway Database Name	SbGatewayDatabase
+Message Container SQL Instance	SPAPP03P-BRO
+Enable SSL connection with SQL Server instance	False
+Authentication	Windows Authentication
+Message Container Database Name	SBMessageContainer01
+RunAs Account	kbtm\svc_sp2016DB-prod
+RunAs Password	***********
+Certificate Generation Key	***********
+Farm Certificate	Auto-generated
+Encryption Certificate	Auto-generated
+HTTPS Port	9355
+TCP Port	9354
+Message Broker Port	9356
+Internal Communication Port Range	9000 - 9004
+Enable firewall rules on this computer	True
+Administrators Group	BUILTIN\Administrators

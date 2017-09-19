@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4382F25F-2D96-4A62-95AB-3885C9D84683}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PageLayoutDemo</RootNamespace>
+    <AssemblyName>PageLayoutDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DemoVisualWebPart\DemoVisualWebPart.ascx.cs">
+      <DependentUpon>DemoVisualWebPart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DemoVisualWebPart\DemoVisualWebPart.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DemoVisualWebPart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLayouts\PageLayoutsDemo\PageLayoutsDemoCode.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ContentTypes\SathishArticle\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c6418e78-e34d-4192-9268-d8e70a41c72a}</SharePointProjectItemId>
+    </None>
+    <None Include="CustomPageLayout\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8d46bdc4-d33f-488d-b6a7-44c1184b3863}</SharePointProjectItemId>
+    </None>
+    <None Include="DemoVisualWebPart\DemoVisualWebPart.webpart" />
+    <None Include="DemoVisualWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f202a521-041b-4e44-ac33-a8771a0e8d50}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature2\Feature2.feature">
+      <FeatureId>{59c3f336-8ecf-4ac7-9825-7e9273274d0a}</FeatureId>
+    </None>
+    <None Include="Features\Feature3\Feature3.feature">
+      <FeatureId>{916a12e4-adfa-4031-8b9a-a12075660ce0}</FeatureId>
+    </None>
+    <None Include="Features\Feature4\Feature4.feature">
+      <FeatureId>{2b218bee-3ad1-4143-8adf-9660405fe432}</FeatureId>
+    </None>
+    <None Include="PageLayouts\PageLayoutsDemo\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{15f036ad-5b8d-4153-94c0-bdbf3243d0fe}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteColumns\ArticleAuthor\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{456ed941-0c57-4be3-a500-c54a2063aec2}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteColumns\Body\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5176a07e-f345-41e8-bebc-1b6d10321b82}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{5f791818-0d5f-4e66-9500-7decaefb9ddb}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{104f138e-7921-427c-adef-053c7b651735}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="SiteColumns\Tags\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7821ec20-a234-454d-a0a6-ebd2fe7b21ff}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="ContentTypes\SathishArticle\Elements.xml" />
+    <Content Include="CustomPageLayout\Elements.xml" />
+    <Content Include="CustomPageLayout\CustomPageLayout.aspx" />
+    <Content Include="DemoVisualWebPart\DemoVisualWebPart.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>DemoVisualWebPart.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="DemoVisualWebPart\Elements.xml" />
+    <Content Include="Features\Feature2\Feature2.Template.xml">
+      <DependentUpon>Feature2.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Feature3\Feature3.Template.xml">
+      <DependentUpon>Feature3.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\Feature4\Feature4.Template.xml">
+      <DependentUpon>Feature4.feature</DependentUpon>
+    </Content>
+    <Content Include="PageLayouts\PageLayoutsDemo\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="PageLayouts\PageLayoutsDemo\PageLayoutsDemo.aspx" />
+    <Content Include="SiteColumns\ArticleAuthor\Elements.xml" />
+    <Content Include="SiteColumns\Body\Elements.xml" />
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="SiteColumns\Tags\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

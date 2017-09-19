@@ -1,0 +1,13 @@
+PS C:\Users\Administrator.SP> cd 'C:\Program Files'
+PS C:\Program Files> cd '.\Common Files'
+PS C:\Program Files\Common Files> cd '.\Microsoft Shared'
+PS C:\Program Files\Common Files\Microsoft Shared> cd '.\Web Server Extensions'
+PS C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions> cd .\15
+
+PS C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15> cd .
+\ISAPI
+
+
+PS C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\15\ISAPI
+> SPMetal /web:http://sp:1220/sites/cslteam /code:Entities.cs /language:csharp
+Warning: All content types for list Form Templates were excluded.

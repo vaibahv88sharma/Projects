@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="CustomPageLayout" Url="_catalogs/masterpage" List="116" RootWebOnly="TRUE">
+    
+    <File Path="CustomPageLayout\CustomPageLayout.aspx" Url="CustomPageLayout.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="Page Layout Demo Title"></Property>
+      <Property Name="FileLeafRef" Value="PageLayoutDemo.aspx" />
+      <Property Name="MasterPageDescription" Value="Page Layout Demo Description"></Property>
+      <Property Name="Page Layout Demo Title" Value="PageLayoutDemo" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#SathishArticle;#0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF39004A3E4013B6A6400288081E19133C93C0;#"></Property>
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+      <Property Name="_ModerationStatus" Value="3" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage" />
+      <Property Name="FSObjType" Value="0" />
+
+    </File>
+  </Module>
+</Elements>
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="PageLayoutDemo" Url="_catalogs/masterpage" List="116" RootWebOnly="TRUE">
+  
+    <File Path="PageLayouts\PageLayoutDemo\PageLayoutsDemo.aspx" Url="PageLayoutDemo.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published" >
+      <Property Name="Title" Value="Page Layout Demo Title"></Property>
+      <Property Name="FileLeafRef" Value="PageLayoutDemo.aspx" />
+      <Property Name="MasterPageDescription" Value="Page Layout Demo Description"></Property>
+      <Property Name="Page Layout Demo Title" Value="PageLayoutDemo" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#SathishArticle;#0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF39004A3E4013B6A6400288081E19133C93C0;#"></Property>
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+      <Property Name="_ModerationStatus" Value="3" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage" />
+      <Property Name="FSObjType" Value="0" />
+
+    </File>
+  </Module>
+</Elements>-->

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{b27182fb-e2fe-4ab5-af84-c6ccbaec8920}"
+       Name="Tags"
+       DisplayName="Tags"
+       Type="MultiChoice"
+       Required="FALSE"
+       Group="PageLayoutDemo">
+    <CHOICES>
+      <CHOICE>SharePoint 2013</CHOICE>
+      <CHOICE>ADFS</CHOICE>
+      <CHOICE>SharePoint</CHOICE>
+      <CHOICE>PageLayoutSample</CHOICE>
+      <CHOICE>Visual Studio</CHOICE>
+    </CHOICES>
+  </Field>
+</Elements>

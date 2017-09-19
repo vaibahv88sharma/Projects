@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  
+  <Module Name="PageLayoutsDemo" Url="_catalogs/masterpage" List="116" RootWebOnly="TRUE">
+    
+    <File Path="PageLayoutsDemo\PageLayoutsDemo.aspx" Url="PageLayoutsDemo/PageLayoutsDemo.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="Page Layout Demo Title"></Property>
+      <Property Name="FileLeafRef" Value="PageLayoutDemo.aspx" />
+      <Property Name="MasterPageDescription" Value="Page Layout Demo Description"></Property>
+      <Property Name="Page Layout Demo Title" Value="PageLayoutDemo" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#SathishArticle;#0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF39004A3E4013B6A6400288081E19133C93C0;#"></Property>
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+      <Property Name="_ModerationStatus" Value="3" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage" />
+      <Property Name="FSObjType" Value="0" />
+    
+      <AllUsersWebPart WebPartZoneID="TopZone" WebPartOrder="1">
+              <![CDATA[<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+              <Title>(Top) Content Editor</Title>
+              <FrameType>Default</FrameType>
+              <Description>Allows authors to enter rich text content.</Description>
+              <IsIncluded>true</IsIncluded>
+              <ZoneID>g_6152392B747446EE9AC5411A52737629</ZoneID>
+              <PartOrder>0</PartOrder>
+              <FrameState>Normal</FrameState>
+              <Height />
+              <Width />
+              <AllowRemove>true</AllowRemove>
+              <AllowZoneChange>true</AllowZoneChange>
+              <AllowMinimize>true</AllowMinimize>
+              <AllowConnect>true</AllowConnect>
+              <AllowEdit>true</AllowEdit>
+              <AllowHide>true</AllowHide>
+              <IsVisible>true</IsVisible>
+              <DetailLink />
+              <HelpLink />
+              <HelpMode>Modeless</HelpMode>
+              <Dir>Default</Dir>
+              <PartImageSmall />
+              <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+              <PartImageLarge>/_layouts/images/mscontl.gif</PartImageLarge>
+              <IsIncludedFilter />
+              <Assembly>Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
+              <TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
+              <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
+              <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">** THIS IS MY TOP CONTENT **</Content>
+              <PartStorage xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
+              </WebPart>]]>
+        </AllUsersWebPart>
+
+      <AllUsersWebPart WebPartZoneID="BottomZone" WebPartOrder="2">
+        <![CDATA[              
+        <?xml version="1.0" encoding="utf-8"?>
+        <webParts>
+          <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+            <metaData>
+              <type name="PageLayoutDemo.DemoVisualWebPart.DemoVisualWebPart, $SharePoint.Project.AssemblyFullName$" />
+              <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+            </metaData>
+            <data>
+              <properties>
+                <property name="Title" type="string">My WebPart</property>
+                <property name="Description" type="string">My WebPart for SP-Learner</property>
+                <property name="ListName" type="string">ExampleList</property>
+                <property name="RowLimit" type="string">5</property>
+              </properties>
+            </data>
+          </webPart>
+        </webParts>
+        ]]>
+      </AllUsersWebPart>
+    
+    </File>
+    
+  </Module>
+  
+</Elements>
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="CustomPageLayout" Url="_catalogs/masterpage" List="116" RootWebOnly="TRUE">
+
+    <File Path="CustomPageLayout\CustomPageLayout.aspx" Url="CustomPageLayout.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="Page Layout Demo Title"></Property>
+      <Property Name="FileLeafRef" Value="PageLayoutDemo.aspx" />
+      <Property Name="MasterPageDescription" Value="Page Layout Demo Description"></Property>
+      <Property Name="Page Layout Demo Title" Value="PageLayoutDemo" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#SathishArticle;#0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF39004A3E4013B6A6400288081E19133C93C0;#"></Property>
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+      <Property Name="_ModerationStatus" Value="3" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage" />
+      <Property Name="FSObjType" Value="0" />
+
+    </File>
+  </Module>
+</Elements>
+-->

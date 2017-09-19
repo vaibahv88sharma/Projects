@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{bb7209d7-0a01-4973-bc12-b20cedbcdb10}"
+       Name="ArticleBody"
+       DisplayName="Body"
+       Type="Note"
+       Required="FALSE"
+       RichText="TRUE"
+       RichTextMode="FullHtml"
+       Group="PageLayoutDemo">
+  </Field>
+</Elements>

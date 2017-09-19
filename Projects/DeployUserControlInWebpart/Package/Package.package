@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="09b918ce-5af4-4c0f-b7ae-bf080c284bb0" solutionId="09b918ce-5af4-4c0f-b7ae-bf080c284bb0" resetWebServer="false" sharePointProductVersion="15.0" name="DeployUserControlInWebpart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="9cc4a854-b5be-47c4-881c-bf83eea0df91" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="7313a916-de29-455b-adac-ad2b63259025" />
+  </projectItems>
+</package>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="HVEGetSQL1" List="113" Url="_catalogs/wp">
+    <File Path="HVEGetSQL1\HVEGetSQL1.webpart" Url="Proj1_HVEGetSQL1.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="Custom" />
+    </File>
+  </Module>
+</Elements>

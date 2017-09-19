@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="HVE.MasterPages" Url="_catalogs/masterpage">
+    <File Path="HVE.MasterPages\HVEMain.master" Url="HVEMain.master" Type="GhostableInLibrary" />
+  </Module>
+</Elements>

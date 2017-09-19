@@ -1,0 +1,405 @@
+<html>
+    <head>
+      <title>Get Card Swipe Page</title>
+<!--         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.1/jszip.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.1/xlsx.js"></script> 
+        <script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.js"></script>  -->
+        
+   </head>
+    <body>
+  
+  
+          <div class="container-fluid" data-ng-controller="cardController">
+  
+  
+        <!-- <h1>{{hyperlinkTitle}}</h1> -->
+  
+     
+              <div class="row">
+                      <table class="table">
+                          <thead>
+                          <tr>
+                              <!-- <th colspan="3">Card Reader Details</th> -->
+                              <!-- <th>&nbsp;</th> -->
+                              <th colspan="2" style="height: 100px; padding: 50px;">Card Reader Details</th>
+                              <th style="height: 100px; padding: 50px;">
+<!--                                     <svg height="100" width="100">
+                                        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="white" />
+                                    </svg>   -->   
+<!--                                     <div style="
+                                    border-radius: 50%;
+                                    width: 100px;
+                                    height: 100px;
+                                    background: yellow;
+                                    display: table-cell;
+                                    text-align: center;
+                                    vertical-align: middle; 
+                                    border: 3px solid red;                                   
+                                    ">11</div>  --> 
+                                    <span style="border-radius:50%; border:solid black 1px;padding:20px">{{cardsCount}}</span>  
+                                    <span>Swipe Count</span>                                  
+                                  <!-- <div style="width:75px;height:75px;border-radius:50%;border:1px; border: 3px solid green; text-align:center; vertical-align:middle; font-size: 40px;position:absolute; right:50px;"><label id="count"></label></div> -->
+                                </th>
+                          </tr>                          
+                          </thead>
+                          <tbody>
+<!--                               <tr>
+                                  <td colspan="2" style="height: 100px; padding: 50px;">Card Reader Details</td>
+                                  <td style="height: 100px; padding: 50px;">
+                                        <span style="border-radius:50%; border:solid black 1px;padding:20px">{{cardsCount}}</span>   
+                                  </td>
+                            </tr>      
+                            <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                    <td>
+                                        <span>Swipe Count</span>
+                                    </td>
+                              </tr>    -->                                                     
+                          <tr>
+                              <td>Staff ID</td>
+                              <td><input type="text" name="magCard" id="magCard" data-ng-model="item.card" placeholder="Swipe the card" ng-disabled="isteacherCardSwaped" ng-keypress="submitStaffCard($event, item)"></td>
+                              <!-- <td><input type="button" class="btn btn-primary" name="magCardButton" value="{{isteacherCardSwaped === true ? 'Edit' : 'Next'}}" ng-click="submitStaffCard(item)"></input></td>    -->                         
+                          </tr>                            
+                          <tr ng-if="isteacherCardSwaped">
+                              <td>CRN</td>
+                              <td><input type="text" name="crn" id="crn" data-ng-model="item.crn" placeholder="Enter CRN" ng-disabled="isCrnEntered"></td>
+                              <td><input type="button" class="btn btn-primary" name="crnButton" value="{{isCrnEntered === true ? 'Edit' : 'Next'}}" ng-click="submitCRN(item)"></input></td>
+                          </tr>
+                          <tr ng-if="isCrnEntered && isteacherCardSwaped">
+                              <td>Term Code</td>
+                              <td><input type="text" name="termCode" id="termCode" data-ng-model="item.termCode" placeholder="Enter Term Code" ng-disabled="isTermCodeEntered"></td>
+                              <td><input type="button" class="btn btn-primary" name="termCodeButton" value="{{isTermCodeEntered === true ? 'Edit' : 'Next'}}" ng-click="submitTermCode($event, item)"></input></td>
+                          </tr>
+                          <tr ng-if="isCrnEntered && isteacherCardSwaped && isTermCodeEntered">
+                              <td colspan="3">
+                                  <p>Ready for Students Swipe Cards</p>
+                              </td>
+<!--                               <td colspan="3">                            
+                                  <div class="row">                                   
+                                     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="text-align: right;">
+                                         Count of Students
+                                     </div>                                                                                                    
+                                  </div>  
+                              </td> -->
+                          </tr>                        
+                          <!-- <tr ng-if="isCrnEntered && isteacherCardSwaped && isTermCodeEntered && studentCardsArray.length > 0" data-ng-repeat="eachStudentCard in studentCardsArray">  -->
+                           <tr ng-if="isCrnEntered && isteacherCardSwaped && isTermCodeEntered && studentCardsArray.length > 0" data-ng-repeat="eachStudentCard in studentCardsArray track by $index"> 
+                                <td>
+                                    <!-- <p>New Student ID</p> -->
+                                    <input type="checkbox" 
+                                            name="{{ 'cardName-' + $index }}"
+                                            id="{{ 'cardId-' + $index }}"
+                                            ng-click="editStudentCard($event, eachStudentCard)"
+                                    >
+                                </td>
+                                <!-- <td colspan="2"> -->
+                                <td>
+                                        <!-- ng-disabled="{{1==1 || !isStudentCardDisabled}}" -->
+                                    <input id="{{ 'studentCard-' + $index }}"
+                                            name="{{ 'studentCard-' + $index }}"
+                                            ng-disabled="!eachStudentCard.editable"
+                                            type="text"                                         
+                                            data-ng-model="eachStudentCard.studentCard">
+                                </td>
+                                <td><input type="button" 
+                                            name="deleteStudentCard" 
+                                            ng-click="deleteStudent($event, eachStudentCard, $index)" 
+                                            ng-hide="!eachStudentCard.editable"
+                                            value="Delete"></td> <!-- new($event, eachStudentCard.studentCard) -->
+                          </tr>  
+                          <tr ng-if="cardsCount">
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>
+                                    <input type="button" value="Submit" ng-click="submitCardDetails(studentCardsArray)" >
+                                </td>
+                          </tr>                                                 
+                          </tbody>
+                      </table>
+              </div>
+  
+          </div>
+  
+  
+  <script>      
+  
+  
+    
+      //Controller
+      angular.module('moduleApp')
+              .controller('cardController', ['cardDetails' , '$log', '$document', '$scope' ,function (cardDetails, $log, $document, $scope) {
+                
+          $scope.hyperlinkTitle = "Card Reader";
+          $scope.isSubmittingForButton = false;
+  
+          $scope.isteacherCardSwaped = false;        
+          $scope.isCrnEntered = false;
+          $scope.isTermCodeEntered = false;
+          $scope.isStudentCardDisabled = false;
+  
+          $scope.studentCard ="";
+          $scope.studentCardTemp ="";
+  
+          $scope.studentCardsArray = [];
+          
+          $scope.cardsCount = 0;
+
+          $scope.item = [];
+  
+          $scope.submitStaffCard = function (event, item) {  
+              debugger; 
+
+              var key = event.charCode ? event.charCode : event.keyCode ? event.keyCode : 0;
+                          if ( key == 13 ) {
+                              //debugger; 
+                              //$scope.$apply(function () {
+                                  //$scope.studentCardTemp = $scope.card;
+                                  $scope.cardData = item.card.replace(/[^\w\s]/gi, '');
+                                  console.log($scope.card);
+                                  $scope.isteacherCardSwaped = !$scope.isteacherCardSwaped;
+                                  $scope.item.card = $scope.cardData;                              
+                            //});
+                              //event.preventDefault();  
+                              //$scope.new(event, $scope.studentCard.replace(/[^\w\s]/gi, ''));
+                              //console.log("Typed value :- "+$scope.studentCard.replace(/[^\w\s]/gi, ''));
+                              $scope.cardData = "";
+                          }else {
+                              $scope.cardData += event.key;
+                          } 
+
+/*               $scope.cardData = item.card.replace(/[^\w\s]/gi, '');
+              console.log($scope.cardData);
+              $scope.isteacherCardSwaped = !$scope.isteacherCardSwaped;
+              $scope.item.card = $scope.cardData; */
+          };          
+          $scope.submitCRN = function (item) {
+              console.log(item);
+              $scope.isCrnEntered = !$scope.isCrnEntered;
+          };      
+  
+  /*         $scope.saveTask = function (event){
+              debugger;
+              if ($scope.isCrnEntered && $scope.isteacherCardSwaped && $scope.isTermCodeEntered && event.keyCode == 13){
+                  debugger;
+                       $scope.studentCardsArray.push({
+                          "studentCard": $scope.studentCard.replace(/[^\w\s]/gi, ''),
+                      }); 
+              }
+          } */
+  
+          $scope.new = function(event, value){
+              //debugger;
+              if (value){
+                  $scope.studentCardsArray.push(
+                      {
+                          "studentCard": value,
+                          "editable": false
+                      }
+                  );                 
+              }
+          }
+  
+          $scope.deleteStudent = function(event, student, index){
+              //debugger;
+
+                  debugger;
+                  
+                  //$scope.$apply(function () {
+                                  
+                                  
+                                               
+                    for(var i = $scope.studentCardsArray.length - 1; i >= 0; i--) {
+                        if($scope.studentCardsArray[i]["studentCard"] === student.studentCard) {
+                            $scope.studentCardsArray.splice(i, 1);
+                        }
+                    }
+                    $scope.cardsCount   = $scope.studentCardsArray.length;
+                  console.log(student);
+                //}); 
+          }
+
+          $scope.$watch('studentCardTemp', function (newValue, oldValue) {
+              //debugger;
+              if((newValue != oldValue) && (newValue != "")){
+              $scope.studentCardsArray.push(
+                      {
+                          "studentCard": newValue,
+                          "editable": false
+                      }
+                  );
+                  
+                  $scope.cardsCount   = $scope.studentCardsArray.length;               
+
+                  }
+          },true); 
+  
+          $scope.editStudentCard = function (event, item) {
+            //$scope.isStudentCardDisabled = !$scope.isStudentCardDisabled;
+            //debugger;
+            item.editable = !item.editable; 
+          }
+
+          
+          $scope.submitTermCode = function (event, item) {
+              $scope.isTermCodeEntered = ! $scope.isTermCodeEntered;
+  
+               /* $scope.studentCardsArray.push(
+                  {"studentCard": "111"}
+              ); */  
+  
+  //$scope.studentCardTemp = "dsadsdssadsasaasqwwqe";
+               $document.bind("keypress", function(event) {
+                  //debugger;
+                  var key = event.charCode ? event.charCode : event.keyCode ? event.keyCode : 0;
+                          if ( key == 13 ) {
+                              //debugger; 
+                              $scope.$apply(function () {
+                                  $scope.studentCardTemp = $scope.studentCard;
+                                  //$scope.studentCardTemp = $scope.studentCard.replace(/[^\w\s]/gi, '');
+                              });
+                              //event.preventDefault();  
+                              //$scope.new(event, $scope.studentCard.replace(/[^\w\s]/gi, ''));
+                              console.log("Typed value :- "+$scope.studentCard.replace(/[^\w\s]/gi, ''));
+                              $scope.studentCard = "";
+                          }else {
+                              $scope.studentCard += event.key;
+                          } 
+              
+              }); 
+              //( window ).keypress(function( event ) {
+              //( document ).keypress(function( event ) {
+              //document.addEventListener('onkeydown', function(d) {
+              //$scope.$watch('studentCardTemp', function(newVal, oldVal){
+  
+          };
+  
+  
+          $scope.exportData = [];
+          
+          $scope.submitCardDetails = function(studentCardsArray){
+
+            $scope.exportData.push(["", 
+                                      "StaffCard",
+                                      $scope.item.card,                                            
+                                      "CRN",
+                                      $scope.item.crn,                                            
+                                      "TermCode",
+                                      $scope.item.termCode,                                            
+                                      "",                                                                            
+                                    ]);              
+              angular.forEach(studentCardsArray, function(value, key) {
+                
+                $scope.exportData.push([value.studentCard, 
+                                            "",                                            
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            "",
+                                            ""]);
+                });           
+                $scope.filename = $scope.item.card + "_" +
+                                    $scope.item.crn + "_" +
+                                    $scope.item.termCode+ "_" +
+                                    Date()+ "_" +
+                                    ".csv";
+                debugger;
+                var processRow = function (row) {
+                    var finalVal = '';
+                    for (var j = 0; j < row.length; j++) {
+                        var innerValue = row[j] === null ? '' : row[j].toString();
+                        if (row[j] instanceof Date) {
+                            innerValue = row[j].toLocaleString();
+                        };
+                        var result = innerValue.replace(/"/g, '""');
+                        if (result.search(/("|,|\n)/g) >= 0)
+                            result = '"' + result + '"';
+                        if (j > 0)
+                            finalVal += ',';
+                        finalVal += result;
+                    }
+                    return finalVal + '\n';
+                };
+
+                var csvFile = '';
+                for (var i = 0; i < $scope.exportData.length; i++) {
+                    csvFile += processRow($scope.exportData[i]);
+                }
+
+                var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
+                if (navigator.msSaveBlob) { // IE 10+
+                    navigator.msSaveBlob(blob, $scope.filename);
+                } else {
+                    var link = document.createElement("a");
+                    if (link.download !== undefined) { // feature detection
+                        // Browsers that support HTML5 download attribute
+                        var url = URL.createObjectURL(blob);
+                        link.setAttribute("href", url);
+                        link.setAttribute("download", $scope.filename);
+                        link.style.visibility = 'hidden';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }
+                }            
+          };
+  
+          
+
+
+          $scope.submitForm = function (item) {
+              //debugger;
+              $scope.isSubmittingForButton = true;
+              
+     /*         //cardDetails.getRequest()
+               details.postNewResource(item).then(function (data) {
+                  console.log(data);
+                  var userNameBkp = $scope.item.userName;
+                  $scope.item = [];
+                  $scope.item.userName = userNameBkp;
+  
+                  $scope.isSubmittingForButton = false;
+              }); */
+          };
+  
+          }]); 
+  
+      // Factory Service
+       angular.module('moduleApp').factory("cardDetails", ["$http", "$q", function ($http, $q) {
+  
+          var getRequest = function () {
+              var deferred = $q.defer();
+              var urlSite = _spPageContextInfo.siteAbsoluteUrl +
+                              "/_api/Web/Lists/GetByTitle('HyperlinksData')/Items?$select=ID,HyperlinkUrl,HyperLinkUrlTitle,HyperlinkUrlTarget,Hyperlink/Hyperlink,Hyperlink/HyperlinkTitle&$expand=Hyperlink";
+              //http://staffportal.myselfserve.com.au/sites/StaffPortal/_api/Web/Lists/GetByTitle('HyperlinksData')/Items?$select=ID,HyperlinkUrl,HyperLinkUrlTitle,HyperlinkUrlTarget,Hyperlink/Hyperlink,Hyperlink/HyperlinkTitle&$expand=Hyperlink
+  
+              $http({
+                  url: urlSite,
+                  method: "GET",
+                  headers: {
+                      "accept": "application/json;odata=verbose",
+                      "content-Type": "application/json;odata=verbose",
+                      "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+                  }
+              })
+                  .success(function (result) {
+                      //debugger;
+                      deferred.resolve(result);
+                  })
+                  .error(function (result, status) {
+                      //debugger;
+                      deferred.reject(status);
+                  });
+              return deferred.promise;
+          };
+  
+          return {
+              getRequest: getRequest
+          };
+      }]);	
+          
+  </script>
+  
+  
+    </body>
+  </html>

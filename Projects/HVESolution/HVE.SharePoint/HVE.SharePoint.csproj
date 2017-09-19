@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E0BB0A7-1000-4B26-8613-B7939F969DE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HVE.SharePoint</RootNamespace>
+    <AssemblyName>HVE.SharePoint</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <ProjectMode>SharePointCustomization</ProjectMode>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
+    <PostDeploymentCommand>
+    </PostDeploymentCommand>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.WorkflowActions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HVEWebParts\HVEDemoWebPart1\HVEDemoWebPart1.ascx.cs">
+      <DependentUpon>HVEDemoWebPart1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HVEWebParts\HVEDemoWebPart1\HVEDemoWebPart1.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HVEDemoWebPart1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HVEWebParts\HVEDemoWebPart\HVEDemoWebPart.cs" />
+    <Compile Include="HVEWebParts\HVEDemoWebPart\HVEDemoWebPartUserControl.ascx.cs">
+      <DependentUpon>HVEDemoWebPartUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HVEWebParts\HVEDemoWebPart\HVEDemoWebPartUserControl.ascx.designer.cs">
+      <DependentUpon>HVEDemoWebPartUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\HVEWebPartsFeature\HVEWebPartsFeature.feature">
+      <FeatureId>{1a25e013-fc6a-48ff-9bd0-309de0a079d7}</FeatureId>
+    </None>
+    <None Include="Features\HVEPageLayoutsFeature\HVEPageLayoutsFeature.feature">
+      <FeatureId>{e1f68406-5f2c-414f-bb60-c887ed7ce71b}</FeatureId>
+    </None>
+    <None Include="Features\HVEMasterPagesFeature\HVEMasterPagesFeature.feature">
+      <FeatureId>{ef1f6824-633b-4886-a58f-9407df24b4d4}</FeatureId>
+    </None>
+    <None Include="Features\HVEPagesFeature\HVEPagesFeature.feature">
+      <FeatureId>{b4ddd2ac-36f0-45db-9896-cb044cf99b38}</FeatureId>
+    </None>
+    <None Include="HVEMasterPages\HVE.MasterPages\HVEMain.master" />
+    <None Include="HVEMasterPages\HVE.MasterPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{18d772eb-7cd1-4652-abbf-75495ac8721a}</SharePointProjectItemId>
+    </None>
+    <None Include="HVEPageLayouts\HVE.PageLayouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d56b1763-0d90-40c0-8045-472e2091bde1}</SharePointProjectItemId>
+    </None>
+    <None Include="HVEPages\HVE.Pages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7aa1bbb5-b4af-4fbb-92f4-a60b12d2ac1b}</SharePointProjectItemId>
+    </None>
+    <None Include="HVEWebParts\HVEDemoWebPart1\HVEDemoWebPart1.webpart" />
+    <None Include="HVEWebParts\HVEDemoWebPart1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d0fdd92d-97c1-46c8-b8f0-3928a753efe3}</SharePointProjectItemId>
+    </None>
+    <None Include="HVEWebParts\HVEDemoWebPart\HVEDemoWebPart.webpart" />
+    <None Include="HVEWebParts\HVEDemoWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{49037a36-c98a-4b92-97b4-ea2734118eed}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{22c33e45-23cf-4baa-b3cc-4eb1f66681d2}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="PostDeployScript_Feature.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\HVEWebPartsFeature\HVEWebPartsFeature.Template.xml">
+      <DependentUpon>HVEWebPartsFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\HVEPageLayoutsFeature\HVEPageLayoutsFeature.Template.xml">
+      <DependentUpon>HVEPageLayoutsFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\HVEMasterPagesFeature\HVEMasterPagesFeature.Template.xml">
+      <DependentUpon>HVEMasterPagesFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\HVEPagesFeature\HVEPagesFeature.Template.xml">
+      <DependentUpon>HVEPagesFeature.feature</DependentUpon>
+    </Content>
+    <Content Include="HVEMasterPages\HVE.MasterPages\Elements.xml" />
+    <Content Include="HVEPageLayouts\HVE.PageLayouts\Elements.xml" />
+    <Content Include="HVEPageLayouts\HVE.PageLayouts\HVEMainPageLayout.aspx" />
+    <Content Include="HVEPages\HVE.Pages\default.aspx" />
+    <Content Include="HVEPages\HVE.Pages\Elements.xml" />
+    <Content Include="HVEWebParts\HVEDemoWebPart1\Elements.xml" />
+    <Content Include="HVEWebParts\HVEDemoWebPart1\HVEDemoWebPart1.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>HVEDemoWebPart1.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="HVEWebParts\HVEDemoWebPart\Elements.xml" />
+    <Content Include="HVEWebParts\HVEDemoWebPart\HVEDemoWebPartUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="false" />
+</Project>

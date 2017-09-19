@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+  <Module Name="HVE.Pages" Url="Pages">
+    <File Path="HVE.Pages\default.aspx" Url="DemoHVEPage.aspx" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE">
+      <Property Name="Title" Value="DemoHVEPage" />
+      <Property Name="ContentType" Value="$Resources:cmscore,contenttype_pagelayout_name;"/>
+      <Property Name="PublishingPageLayout" Value="~Sitecollection/_catalogs/masterpage/HVEMainPageLayout.aspx" />
+      <AllUsersWebPart WebPartZoneID="WebPartZone1" WebPartOrder="1">
+        <![CDATA[
+       <?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="HVE.SharePoint.HVEWebParts.HVEDemoWebPart1.HVEDemoWebPart1, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">HVEDemoWebPart1</property>
+        <property name="Description" type="string">My Visual WebPart</property>
+        <property name="ChromeType" type="chrometype">None</property> 
+        <property name="AllowHide" type="bool">False</property>
+        <property name="AllowMinimize" type="bool">False</property>
+        <property name="AllowConnect" type="bool">True</property> 
+        <property name="Width" type="unit" /> 
+        <property name="Height" type="unit" /> 
+        <property name="HelpMode" type="helpmode">Navigate</property> 
+        <property name="CatalogIconImageUrl" type="string" /> 
+        <property name="AllowEdit" type="bool">True</property> 
+        <property name="TitleIconImageUrl" type="string" /> 
+        <property name="Direction" type="direction">NotSet</property> 
+        <property name="AllowClose" type="bool">False</property> 
+        <property name="ChromeState" type="chromestate">Normal</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+
+           ]]>
+      </AllUsersWebPart>
+    </File>
+  </Module>
+</Elements>

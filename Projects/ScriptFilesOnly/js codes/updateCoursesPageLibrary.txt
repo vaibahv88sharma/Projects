@@ -1,0 +1,299 @@
+<div id="parent1">
+
+	<div id="parent1">
+		<span>
+		
+		<p>
+		<strong>This Page is only for Administrators only</strong>
+		</p>
+		
+		
+		<p>
+		Follow the instructions to change Integration Code:		
+		<br>
+		<br>
+		
+		NOTE:  Only people who have Full Control or Design permissions can set up libraries to require check-out of files.		
+		<br>
+		<br>
+		
+		1. Go to the library: http://spwfe1:8080/Courses/Pages/Forms/AllItems.aspx
+		<br>
+		<br>
+		
+		2. Click Settings, if you don't see these menu items, click Library on the ribbon, and then click Library settings in the Settings group.
+		<br>
+		<br>
+
+		3. On the Settings page, under General Settings, click Versioning settings.
+		<br>
+		<br>
+
+		4. In the Require Check Out section, under Require documents to be checked out before they can be edited?, click NO.
+		<br>
+		<br>
+
+		5. Click OK to save your settings and return to the Library Settings page.
+		<br>
+		<br>
+		
+		6. Now hit the following button on this page : "Create Integration Codes".
+		<br>
+		<br>
+		
+		7. Wait for 5 minutes and then follow above mentioned steps 1 to 5 and hit YES in 4th step instead of NO.
+			<br>
+			<br>
+		</p>
+		
+		</span>
+	</div>
+
+	<input id="clickMe" type="button" value="Create Integration Codes" onclick="retrieveLib();" />
+
+	
+</div>
+
+
+
+
+<script>
+//alert("hi");
+jQuery(document).ready(function ()
+{
+	
+	//var myArrayNew = [];
+    //SP.SOD.executeFunc('sp.js', 'SP.ClientContext', retrieveLib);
+	
+}); 
+
+
+
+function retrieveLib() {
+	debugger;
+	var myArrayNew = [];
+    SP.SOD.executeFunc('sp.js', 'SP.ClientContext', initRetrieve);
+	//alert("Operation Successfully Completed");
+	
+	//initRetrieve();
+}
+
+function initRetrieve() {
+	var siteUrl = '/Courses';
+	//retrieveListItems(siteUrl);	
+	//debugger;
+	var myArray = [];	
+    retrieveListItems(siteUrl).then(
+            function (collListItem) {
+
+				debugger;
+			
+				try {			
+			
+				
+					var listItemInfo = '';
+					//var myArray = [];
+					var listItemEnumerator = collListItem.getEnumerator();
+						
+					while (listItemEnumerator.moveNext()) {
+						var oListItem = listItemEnumerator.get_current();
+						
+						var cSpId = oListItem.get_id();
+						var cCode = oListItem.get_item('CourseCode') || "";
+						var cTitle1 = oListItem.get_item('Title').split(' ').join('').replace(/[&\/\\#,+()$~%._'"'’:*?<>{}]/g, '');
+						var cTitle = cTitle1.replace(/-/g, '').split('.').join('');
+						var integrationCodeFromList = oListItem.get_item('IntegrationCode');
+						
+						var integrationCode = cCode + "|" + cTitle;
+						
+						if (integrationCodeFromList != integrationCode){ 
+							
+							debugger;
+							//var integrationCode = cCode + "|" + cTitle;
+							
+							listItemInfo += '\nIntegrationCode: ' + integrationCode;
+
+							   myArray.push( {
+								 cSpId1: cSpId,
+								 cCode1: cCode,
+								 cTitle1: cTitle,
+								 integrationCode1: integrationCode
+							   });
+						}
+					}
+
+					
+					debugger;
+
+					loadNext(myArray, 0);
+					
+					if (myArray.length === 0){
+						alert("All codes updated already");
+					}					
+			
+				}
+				catch(err) {
+					//document.getElementById("demo").innerHTML = err.message;
+					alert(err.message);
+				}
+				finally {
+					//alert("Operation Successfully Completed");
+				}				
+			
+			
+			
+			
+            },
+            function (sender, args) {
+				debugger;
+                console.log('An error occured while retrieving list items:' + args.get_message());
+				alert(args.get_message());
+            }
+        ); 
+}    
+
+
+function retrieveListItems(siteUrl) {
+
+	var deferred = $.Deferred();
+
+
+    var clientContext = new SP.ClientContext(siteUrl);
+    var oList = clientContext.get_web().get_lists().getByTitle('Pages');
+        
+    var camlQuery = new SP.CamlQuery();
+    camlQuery.set_viewXml("<View><Query><Where><IsNotNull><FieldRef Name='Title' /></IsNotNull></Where></Query></View>");
+				
+    this.collListItem = oList.getItems(camlQuery);
+        
+    clientContext.load(collListItem);
+        
+    //clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySucceeded), Function.createDelegate(this, this.onQueryFailed)); 
+    clientContext.executeQueryAsync(
+			Function.createDelegate(this,
+				function () { deferred.resolve(collListItem); }),
+			Function.createDelegate(this,
+				function (sender, args) { deferred.reject(sender, args); })
+		);
+    return deferred.promise();		
+}
+
+
+
+
+function loadNext(myArray, i){
+	debugger;
+	if (i < myArray.length){
+	
+		debugger;
+		console.log( myArray[i]["cSpId1"] + "--------------" + myArray[i]["cCode1"] + "--------------" + myArray[i]["integrationCode1"] );
+		
+		updateListItem(myArray[i]["cSpId1"], myArray[i]["integrationCode1"])
+			.then(
+				function (oListItem) {
+
+					debugger;
+					console.log('oListItem:- '+oListItem);
+					loadNext(myArray, i+1)
+				},
+				function (sender, args) {
+					debugger;
+					console.log('An error occured while retrieving list items:' + args.get_message());
+				}
+			);
+
+	}
+}
+
+function updateListItem(idCourseUpd, integrationCodeUpd) {
+	var deferred = $.Deferred();
+	var siteUrl = '/Courses';
+    var clientContext = new SP.ClientContext(siteUrl);
+    var oList = clientContext.get_web().get_lists().getByTitle('Pages');
+
+    this.oListItem = oList.getItemById(idCourseUpd);
+
+    oListItem.set_item('IntegrationCode', integrationCodeUpd);
+	
+	debugger;
+    oListItem.update();
+
+    //clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySucceededUpdate), Function.createDelegate(this, this.onQueryFailed));
+	clientContext.executeQueryAsync(
+		Function.createDelegate(this,
+			function () { 
+				debugger;
+				deferred.resolve(oListItem); 
+			}),
+		Function.createDelegate(this,
+			function (sender, args) { 
+				debugger;
+				deferred.reject(sender, args); 
+			})
+	);
+	return deferred.promise();	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//function onQuerySucceeded(sender, args) {
+//	debugger;
+//    var listItemInfo = '';
+//	var myArray = [];
+//    var listItemEnumerator = collListItem.getEnumerator();
+//        
+//    while (listItemEnumerator.moveNext()) {
+//        var oListItem = listItemEnumerator.get_current();
+//		
+//		var cSpId = oListItem.get_id();
+//		var cCode = oListItem.get_item('CourseCode') || "";
+//		var cTitle1 = oListItem.get_item('Title').split(' ').join('').replace(/[&\/\\#,+()$~%._'"’:*?<>{}]/g, '');
+//		var cTitle = cTitle1.replace(/-/g, '').split('.').join('');;
+//		var integrationCode = cCode + "|" + cTitle;
+//		
+//        listItemInfo += '\nIntegrationCode: ' + integrationCode;
+//
+//		   myArray.push( {
+//			 cSpId1: cSpId,
+//			 cCode1: cCode,
+//			 cTitle1: cTitle,
+//			 integrationCode1: integrationCode
+//		   });
+//    }
+//
+//	//myArray = myArrayNew;
+//	console.log(listItemInfo.toString());
+//		
+//		
+//}
+
+
+
+
+
+
+
+
+//function onQuerySucceededUpdate(sender, args) {
+//	debugger;
+//    alert('Item updated!');
+//	alert('Item updates is: ' + oListItem.get_id());
+//	loadNext();
+//}
+//
+//function onQueryFailed(sender, args) {
+//	debugger;
+//    alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+//}
+
+</script>

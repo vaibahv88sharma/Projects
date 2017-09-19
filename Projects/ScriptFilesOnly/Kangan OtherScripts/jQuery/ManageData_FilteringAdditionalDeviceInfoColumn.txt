@@ -1,0 +1,239 @@
+﻿<script src="https://portal.myselfserve.com.au/sites/StaffPortal/Style%20Library/BKI/jquery-3.2.1.min.js"></script>
+
+<input id="clickMe" type="button" value="Create Integration Codes" onclick="retrieveLib();" />
+
+<script>
+
+$( document ).ready(function() {
+	//debugger;
+    console.log( "ready!" );
+	
+	
+	
+});
+
+function retrieveLib() {
+	SP.SOD.executeFunc('sp.js', 'SP.ClientContext', initRetrieve);
+}
+
+
+function initRetrieve() {
+	var siteUrl = '/sites/StaffPortal';
+	
+}
+
+function initRetrieve() {
+	var siteUrl = '/sites/StaffPortal';
+	//retrieveListItems(siteUrl);	
+	//debugger;
+	var myArray = [];	
+	var deviceCodes = [];
+	
+    retrieveListItems(siteUrl).then(
+            function (collListItem) {
+
+				
+			
+				try {			
+			
+				
+					var listItemInfo = '';
+					//var myArray = [];
+					var listItemEnumerator = collListItem.getEnumerator();
+						
+					while (listItemEnumerator.moveNext()) {
+						var oListItem = listItemEnumerator.get_current();
+						
+						var cSpId = oListItem.get_id();
+						var cCode = oListItem.get_item('additionalDeviceNumber') || "";
+						
+						//debugger;
+						
+						if ( (cCode != "") && (cCode != "0--") && (cCode.indexOf('--') >0) )
+						//if ((cCode != "") && (cCode != "0--") && (cSpId > 286))
+						{
+							//cCode.match(/--/gi).length;
+							//cCode.substr(cCode.indexOf('--'), cCode.indexOf(','));
+							var tempCode ="";
+							//var tempCode = cCode;
+							for (i = 0; i < cCode.match(/--/gi).length; i++) { 
+							
+								//var tempCode = cCode;
+								//tempCode.substr(tempCode.indexOf('--'), tempCode.indexOf(','))
+								//(cCode.split(',')[0]).split('--')[1]
+								debugger;
+								
+								if (i>0){									
+									//console.log( cSpId + "---" + (cCode.split(',')[i]).split('--')[1]);
+									       //cCode = (cCode.split(',')[i]).split('--')[1];
+									tempCode += ' ,KbName--' + (cCode.split(',')[i]).split('--')[1];
+								}
+								else{
+									//console.log( cSpId + "---" +(cCode.split(',')[i]).split('--')[1]);
+									tempCode += 'KbName--' + (cCode.split(',')[i]).split('--')[1];
+								}
+							    //deviceCodes.push( {
+								//    deviceIndex: i,
+								//    //deviceCode: cCode,
+								//    deviceNumber: (cCode.split(',')[i]).split('--')[1]
+							    //});
+							}							
+							
+							console.log(tempCode);
+							
+							myArray.push( {
+							    cSpId1: cSpId,
+							    additionalDeviceNumberRefined: tempCode
+							});		
+							
+							debugger;
+							loadNext(myArray, 0);
+							
+							//// ARRAYS
+							//var arr = [
+							//   'one',
+							//   'two',
+							//   'three',
+							//   'four',
+							//   'five'
+							//];
+							//$.each(arr, function (index, value) {
+							//  console.log(value);
+							//  
+							//  // Will stop running after "three"
+							//  return (value !== 'three');
+							//});
+							//// Outputs: one two three
+							
+							
+							//// OBJECTS
+							//var obj = {
+							//   one: 1,
+							//   two: 2,
+							//   three: 3,
+							//   four: 4,
+							//   five: 5
+							//};
+							//$.each(obj, function (index, value) {
+							//  console.log(value);
+							//});
+							//// Outputs: 1 2 3 4 5							
+							
+						}
+						
+						
+					}
+
+					
+					
+
+					
+					
+			
+				}
+				catch(err) {
+					//document.getElementById("demo").innerHTML = err.message;
+					alert(err.message);
+				}
+				finally {
+					//alert("Operation Successfully Completed");
+				}				
+			
+			
+			
+			
+            },
+            function (sender, args) {
+				debugger;
+                console.log('An error occured while retrieving list items:' + args.get_message());
+				alert(args.get_message());
+            }
+        ); 
+}    
+
+
+
+function retrieveListItems(siteUrl) {
+
+	var deferred = $.Deferred();
+
+
+    var clientContext = new SP.ClientContext(siteUrl);
+    var oList = clientContext.get_web().get_lists().getByTitle('DeviceInfo_Demo');
+        
+    var camlQuery = new SP.CamlQuery();
+    //camlQuery.set_viewXml("<View><Query><Where><IsNotNull><FieldRef Name='Title' /></IsNotNull></Where></Query></View>");
+	camlQuery.set_viewXml("<View><Query></Query></View>");
+				
+    this.collListItem = oList.getItems(camlQuery);
+        
+    clientContext.load(collListItem);
+        
+    //clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySucceeded), Function.createDelegate(this, this.onQueryFailed)); 
+    clientContext.executeQueryAsync(
+			Function.createDelegate(this,
+				function () { deferred.resolve(collListItem); }),
+			Function.createDelegate(this,
+				function (sender, args) { deferred.reject(sender, args); })
+		);
+    return deferred.promise();		
+}
+
+
+function loadNext(myArray, i){
+	debugger;
+	if (i < myArray.length){
+	
+		debugger;
+		console.log( myArray[i]["cSpId1"] + "--------------" + myArray[i]["additionalDeviceNumberRefined"] );
+		
+		updateListItem(myArray[i]["cSpId1"], myArray[i]["additionalDeviceNumberRefined"])
+			.then(
+				function (oListItem) {
+
+					debugger;
+					console.log('oListItem:- '+oListItem);
+					loadNext(myArray, i+1)
+				},
+				function (sender, args) {
+					debugger;
+					console.log('An error occured while retrieving list items:' + args.get_message());
+				}
+			);
+
+	}
+}
+
+
+function updateListItem(idCourseUpd, integrationCodeUpd) {
+	var deferred = $.Deferred();
+	var siteUrl = '/sites/StaffPortal';
+    var clientContext = new SP.ClientContext(siteUrl);
+    var oList = clientContext.get_web().get_lists().getByTitle('DeviceInfo_Demo');
+
+    this.oListItem = oList.getItemById(idCourseUpd);
+
+    oListItem.set_item('additionalDeviceNumberRefined', integrationCodeUpd);
+	
+	debugger;
+    oListItem.update();
+
+    //clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySucceededUpdate), Function.createDelegate(this, this.onQueryFailed));
+	clientContext.executeQueryAsync(
+		Function.createDelegate(this,
+			function () { 
+				debugger;
+				deferred.resolve(oListItem); 
+			}),
+		Function.createDelegate(this,
+			function (sender, args) { 
+				debugger;
+				deferred.reject(sender, args); 
+			})
+	);
+	return deferred.promise();	
+}
+
+
+
+</script>

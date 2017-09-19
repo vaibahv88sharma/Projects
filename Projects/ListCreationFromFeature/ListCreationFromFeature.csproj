@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C029F9C6-E5AC-4593-B141-3734DD2AE78F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ListCreationFromFeature</RootNamespace>
+    <AssemblyName>ListCreationFromFeature</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ContentType1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4a08d496-3c55-491b-9d96-554eb7df82ee}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\1 SiteColumns Feature\1 SiteColumns Feature.feature">
+      <FeatureId>{258ad2bd-8cb9-4db9-8fad-fee7a935fc38}</FeatureId>
+    </None>
+    <None Include="Features\2 ContentType Feature\2 ContentType Feature.feature">
+      <FeatureId>{1d854df7-1eb2-4d27-9a93-1833b5159d39}</FeatureId>
+    </None>
+    <None Include="Features\3 List Feature\3 List Feature.feature">
+      <FeatureId>{81cec674-3dfe-484a-a88a-7d13527d5421}</FeatureId>
+    </None>
+    <None Include="Features\4 LookUpSiteColumns Feature\4 LookUpSiteColumns Feature.feature">
+      <FeatureId>{b6844b08-4ae4-4cf5-a3dc-5155bc5daf9b}</FeatureId>
+    </None>
+    <None Include="Features\5 LookUpContentType Feature\5 LookUpContentType Feature.feature">
+      <FeatureId>{d77b481d-e121-4b5c-9950-e8bd5642df25}</FeatureId>
+    </None>
+    <None Include="Features\6 List Feature\6 List Feature.feature">
+      <FeatureId>{7faf48bf-d4dd-4fd2-adb5-46497ba8d73e}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="List1\List1Instance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{de262bc3-2f35-4301-9e43-18e85cd76a72}</SharePointProjectItemId>
+    </None>
+    <None Include="List1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c9058356-833a-44cf-baab-2bed826a8615}</SharePointProjectItemId>
+    </None>
+    <None Include="LookUpContentType1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ca59b73b-c5e7-4034-81c7-06def8556743}</SharePointProjectItemId>
+    </None>
+    <None Include="LookUpList1\LookUpList1Instance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{24dedab2-b507-4298-bb28-74087b845c28}</SharePointProjectItemId>
+    </None>
+    <None Include="LookUpList1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6f8e9f1e-ba55-4396-a68c-9de2af1c46ac}</SharePointProjectItemId>
+    </None>
+    <None Include="LookUpSiteColumn1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{894309f3-4f42-452a-98e9-443524b87110}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{9119a96b-ec62-4d0b-80e9-713c2b3dc6ac}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="SiteColumn1\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0d56e285-1e5b-4a1f-bf7b-86481219826c}</SharePointProjectItemId>
+    </None>
+    <None Include="SiteColumn2\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9adca631-7b8e-4bbf-92cc-a156131f557f}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContentType1\Elements.xml" />
+    <Content Include="Features\1 SiteColumns Feature\1 SiteColumns Feature.Template.xml">
+      <DependentUpon>1 SiteColumns Feature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\2 ContentType Feature\2 ContentType Feature.Template.xml">
+      <DependentUpon>2 ContentType Feature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\3 List Feature\3 List Feature.Template.xml">
+      <DependentUpon>3 List Feature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\4 LookUpSiteColumns Feature\4 LookUpSiteColumns Feature.Template.xml">
+      <DependentUpon>4 LookUpSiteColumns Feature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\5 LookUpContentType Feature\5 LookUpContentType Feature.Template.xml">
+      <DependentUpon>5 LookUpContentType Feature.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\6 List Feature\6 List Feature.Template.xml">
+      <DependentUpon>6 List Feature.feature</DependentUpon>
+    </Content>
+    <Content Include="List1\Elements.xml" />
+    <Content Include="List1\List1Instance\Elements.xml" />
+    <Content Include="List1\Schema.xml" />
+    <Content Include="LookUpContentType1\Elements.xml" />
+    <Content Include="LookUpList1\Elements.xml" />
+    <Content Include="LookUpList1\LookUpList1Instance\Elements.xml" />
+    <Content Include="LookUpList1\Schema.xml" />
+    <Content Include="LookUpSiteColumn1\Elements.xml" />
+    <Content Include="SiteColumn1\Elements.xml" />
+    <Content Include="SiteColumn2\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0'">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

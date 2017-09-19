@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D8BF7D3-650A-420F-885A-7075456954CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharePointProj8</RootNamespace>
+    <AssemblyName>SharePointProj8</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HVE.Files\dbConnection.cs" />
+    <Compile Include="HVE.Files\HVETimerJob.cs" />
+    <Compile Include="HVE.WebParts\GetSQLWebPart\GetSQLWebPart.ascx.cs">
+      <DependentUpon>GetSQLWebPart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HVE.WebParts\GetSQLWebPart\GetSQLWebPart.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetSQLWebPart.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HVE.WebParts\MostSearchedDocuments\MostSearchedDocuments.ascx.cs">
+      <DependentUpon>MostSearchedDocuments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HVE.WebParts\MostSearchedDocuments\MostSearchedDocuments.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MostSearchedDocuments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HVE.WebParts\TopSearches\TopSearches.ascx.cs">
+      <DependentUpon>TopSearches.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="HVE.WebParts\TopSearches\TopSearches.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TopSearches.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{b5678cd3-9d8e-4a23-8ee6-ceb869cb6a23}</FeatureId>
+    </None>
+    <None Include="HVE.WebParts\GetSQLWebPart\GetSQLWebPart.webpart" />
+    <None Include="HVE.WebParts\GetSQLWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cae65c64-f21d-4d8c-a877-1bddfc01209a}</SharePointProjectItemId>
+    </None>
+    <None Include="HVE.WebParts\MostSearchedDocuments\MostSearchedDocuments.webpart" />
+    <None Include="HVE.WebParts\MostSearchedDocuments\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b157faee-b8e4-4402-a1fa-b93d0c5e42eb}</SharePointProjectItemId>
+    </None>
+    <None Include="HVE.WebParts\TopSearches\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c609cc1b-05b7-43b6-9672-fdaabaf54423}</SharePointProjectItemId>
+    </None>
+    <None Include="HVE.WebParts\TopSearches\TopSearches.webpart" />
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{7f5ca7a5-e073-4129-a0b6-ee2a79555e2a}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="HVE.WebParts\GetSQLWebPart\Elements.xml" />
+    <Content Include="HVE.WebParts\GetSQLWebPart\GetSQLWebPart.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>GetSQLWebPart.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="HVE.WebParts\MostSearchedDocuments\Elements.xml" />
+    <Content Include="HVE.WebParts\MostSearchedDocuments\MostSearchedDocuments.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>MostSearchedDocuments.ascx.g.cs</LastGenOutput>
+    </Content>
+    <Content Include="HVE.WebParts\TopSearches\Elements.xml" />
+    <Content Include="HVE.WebParts\TopSearches\TopSearches.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>TopSearches.ascx.g.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x0100E7570FE8B50C483FAC12692E341328B2" Name="ContentType1" Group="Custom Content Types" Description="My Content Type" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{c0f2dcdf-c6b0-495b-8682-04c02764d822}" DisplayName="Site Column 1" Required="TRUE" Name="SiteColumn1" />
+      <FieldRef ID="{393c516c-7af8-4381-8597-54f538ebc8cd}" DisplayName="Site Column 2" Required="FALSE" Name="SiteColumn2" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

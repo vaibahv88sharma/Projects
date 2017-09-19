@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{5b12202d-98f6-4839-8ee4-dca93907136a}"
+       Name="LookUpSiteColumn1"
+       DisplayName="Look Up Site Column 1"
+       Type="Lookup"
+       Required="FALSE"
+       List="Lists/List1"
+       ShowField="SiteColumn1"
+       Group="Custom Site Columns"
+       Overwrite="TRUE">
+  </Field>
+</Elements>

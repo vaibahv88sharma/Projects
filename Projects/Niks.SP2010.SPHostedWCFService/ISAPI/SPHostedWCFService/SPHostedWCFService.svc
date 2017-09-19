@@ -1,0 +1,2 @@
+﻿<%@ Assembly Name="Niks.SP2010.SPHostedWCFService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d15e48c215da508c"%> 
+<%@ ServiceHost Service="Niks.SP2010.SPHostedWCFService.SPHostedWCFService" %>

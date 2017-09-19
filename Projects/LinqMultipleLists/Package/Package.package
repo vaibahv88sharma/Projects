@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f1ee0578-74f9-4701-ba95-3c8ec5359890" solutionId="f1ee0578-74f9-4701-ba95-3c8ec5359890" resetWebServer="false" sharePointProductVersion="15.0" name="LinqMultipleLists" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="e84263ab-2724-4882-8ff8-1fa0a9da593f" />
+  </features>
+</package>

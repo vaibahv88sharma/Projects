@@ -1,0 +1,14 @@
+﻿<!--Created:cbbc9d22-5cf7-4e4c-8ee9-42a772aae58a-->
+<App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest" ProductID="{b4b23940-c4f0-4e7c-b58b-9387a314042a}" Version="1.0.0.0" SharePointMinVersion="15.0.0.0" Name="JSOMDemo">
+  <Properties>
+    <Title>JSOMDemo</Title>
+    <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
+  </Properties>
+  <AppPrincipal>
+    <Internal />
+  </AppPrincipal>
+  <AppPermissionRequests>
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="FullControl" />
+  </AppPermissionRequests>
+</App>

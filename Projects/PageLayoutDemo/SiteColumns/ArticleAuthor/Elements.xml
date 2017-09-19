@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{295941ef-fe3a-4c41-9320-781c361a7f20}"
+       Name="ArticleAuthor"
+       DisplayName="Article Author"
+       Type="Text"
+       Required="FALSE"
+       Group="PageLayoutDemo">
+  </Field>
+</Elements>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="e5bc9906-0aab-48a1-a455-e92ed925b18f" 
+        solutionId="e5bc9906-0aab-48a1-a455-e92ed925b18f" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="REST"
+        sharePointProductVersion="15.0">
+  <features>
+        <featureReference itemId="09a91be4-6328-426e-b8f8-b1c9a19245b8" />
+  </features>
+</package>
