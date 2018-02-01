@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="26b02573-bb41-42cd-b0e3-30cf71b8c474" solutionId="26b02573-bb41-42cd-b0e3-30cf71b8c474" resetWebServer="false" sharePointProductVersion="16.0" name="BKIAuditing" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="d1a0e9e1-140b-40b5-a849-01b07392165b" />
+  </features>
+</package>
