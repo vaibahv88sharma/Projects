@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects", "Projects\Projects.csproj", "{303EF6ED-3C52-4A14-92A6-FF9E7E198BB4}"
 EndProject
@@ -40,6 +40,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProj8", "SharePointProj8\SharePointProj8.csproj", "{3D8BF7D3-650A-420F-885A-7075456954CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointProj666", "SharePointProj666\SharePointProj666.csproj", "{CAB25DAE-1F55-401C-AEDB-AF597CD34C52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BKIAuditing", "BKIAuditing\BKIAuditing\BKIAuditing.csproj", "{A6507134-9C19-470A-A0F4-7FBAF900E2CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,8 +149,17 @@ Global
 		{CAB25DAE-1F55-401C-AEDB-AF597CD34C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB25DAE-1F55-401C-AEDB-AF597CD34C52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CAB25DAE-1F55-401C-AEDB-AF597CD34C52}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A6507134-9C19-470A-A0F4-7FBAF900E2CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6507134-9C19-470A-A0F4-7FBAF900E2CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6507134-9C19-470A-A0F4-7FBAF900E2CE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A6507134-9C19-470A-A0F4-7FBAF900E2CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6507134-9C19-470A-A0F4-7FBAF900E2CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6507134-9C19-470A-A0F4-7FBAF900E2CE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {888F4C5C-3BC8-4BFA-9606-C31BF87B6440}
 	EndGlobalSection
 EndGlobal
