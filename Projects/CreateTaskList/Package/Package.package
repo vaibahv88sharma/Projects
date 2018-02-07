@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="12121f3b-647f-49e1-9511-01ccca9424ca" 
+        solutionId="12121f3b-647f-49e1-9511-01ccca9424ca" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="CreateTaskList"
+        sharePointProductVersion="15.0">
+  <features>
+        <featureReference itemId="bb17fec8-458e-4e51-99d5-f4f78ea1c5b4" />
+  </features>
+</package>
